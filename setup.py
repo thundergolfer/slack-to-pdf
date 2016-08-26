@@ -17,18 +17,18 @@ long_description = read('README.md')
 
 
 setup(
-    name="slack-export-viewer",
+    name="slack-to-pdf",
     version=slackviewer.__version__,
-    url='https://github.com/hfaran/slack-export-viewer',
+    url='https://github.com/thundergolfer/slack-to-pdf',
     license='MIT License',
-    author='Hamza Faran',
-    author_email='hamzafaran@outlook.com',
-    description=('Slack Export Archive Viewer'),
+    author='Jonathon Belotti',
+    author_email='jonathon belotti',
+    description=('Slack To PDF Report'),
     long_description=long_description,
     packages=["slackviewer"],
     install_requires = install_requires,
     entry_points={'console_scripts': [
-        'slack-export-viewer = slackviewer.main:main'
+        'slack-to-pdf = slackviewer.main:main'
     ]},
     include_package_data=True,
     # https://github.com/mitsuhiko/flask/issues/1562

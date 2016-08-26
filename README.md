@@ -1,6 +1,6 @@
-# Slack Export Viewer
+# Slack To PDF Report
 
-A Slack Export archive viewer that allows you to easily view and share a report of your
+A Slack To PDF Report tool that allows you to easily view and share a report of your
 Slack team's interactions (instead of having to dive into hundreds of JSON files).
 
 ![Preview](screenshot.png)
@@ -35,15 +35,17 @@ If everything went well, your archive will have been extracted, processed, and b
 
 ## Installation
 
+#### Installing wkhtmltopdf
+
 ```bash
-pip install slack-export-viewer
+pip install slack-to-pdf
 ```
 
-`slack-export-viewer` will be installed as an entry-point; run from anywhere.
+`slack-to-pdf` will be installed as an entry-point; run from anywhere.
 
 ```bash
-$ slack-export-viewer --help
-Usage: slack-export-viewer [OPTIONS]
+$ slack-to-pdf --help
+Usage: slack-to-pdf [OPTIONS]
 
 Options:
   -p, --port INTEGER  Host port to serve your content on

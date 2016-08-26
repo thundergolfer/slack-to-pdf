@@ -5,11 +5,10 @@ import click
 import flask
 
 from slackviewer.app import app
-from slackviewer.archive import \
-    extract_archive, \
-    get_users, \
-    get_channels, \
-    compile_channels
+from slackviewer.archive import (   extract_archive,
+                                    get_users,
+                                    get_channels,
+                                    compile_channels )
 
 
 def envvar(name, default):
@@ -36,8 +35,10 @@ def configure_app(app, archive, debug):
     channel_data = get_channels(path)
     channels = compile_channels(path, user_data, channel_data)
 
+    # RUN TEAM ANALYSIS
     top = flask._app_ctx_stack
     top.channels = channels
+
 
 
 @click.command()
@@ -53,7 +54,7 @@ def configure_app(app, archive, debug):
               help="If you do not want a browser to open "
                    "automatically, set this.")
 @click.option('--debug', is_flag=True, default=flag_ennvar("FLASK_DEBUG"))
-def main(port, archive, ip, no_browser, debug):
+def main(port, archive, ip, no_browser=False, debug=False):
     if not archive:
         raise ValueError("Empty path provided for archive")
 
