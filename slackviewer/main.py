@@ -4,6 +4,9 @@ import webbrowser
 import click
 import flask
 
+from collections import Counter # for analytics
+import datetime
+
 from slackviewer.app import app
 from slackviewer.archive import (   extract_archive,
                                     get_users,
@@ -38,6 +41,22 @@ def configure_app(app, archive, debug):
     # RUN TEAM ANALYSIS
     top = flask._app_ctx_stack
     top.channels = channels
+    print(type(channels))
+    usernames = []
+    timestamps = []
+    for ch_id, messages in channels.items():
+        for message in messages:
+            usernames.append(message.username)
+            timestamps.append(datetime.datetime.strptime(message.time, "%Y-%m-%d %H:%M:%S"))
+
+    # Get num messages per user in descending order
+    count_users = Counter(usernames).most_common()
+    count_date_of_message = Counter([t.date() for t in timestamps]).most_common()
+    count_hour_of_message = Counter([t.hour for t in timestamps]).most_common()
+    # TODO get most active channel
+    # TODO get num of messages per user in bar graph
+    # TODO get number of words written by user
+    # TODO get ave length of message by user
 
 
 

@@ -62,3 +62,12 @@ target/
 
 # IDE
 .idea
+
+# Ignore VirtualEnv env
+env*/
+
+# Ignore zip file
+*.zip
+
+# Ignore json test files
+test_json/
