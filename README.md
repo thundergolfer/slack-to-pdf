@@ -6,7 +6,7 @@
 A Slack To PDF Report tool that allows you to easily view and share a report of your
 Slack team's interactions (instead of having to dive into hundreds of JSON files).
 
-![Preview](screenshot.png)
+![Preview](images/mockup_slack_to_pdf_1.png)
 
 
 ## Overview
@@ -25,42 +25,32 @@ Slack team's interactions (instead of having to dive into hundreds of JSON files
 * Wait for it to complete
 * Refresh the page and download the export (.zip file) into whatever directory
 
-### 2) Point `slack-export-viewer` to it
+### 2) Run the following command.
 
-Point slack-export-viewer to the .zip file and let it do its magic
+The `-z` flag is to give the .zip file to slack-to-pdf and let it do its magic
 
 ```bash
-slack-to-pdf -z /path/to/export/zip
+python app.py -z /path/to/export/example.zip
 ```
 
 If everything went well, your archive will have been extracted, processed, and browser window will have opened showing your *#general* channel from the export.
+You can **close the local server** and navigate to the project's root directory, where you will see a `Your_Report.pdf`, and you're done!
 
 
 ## Installation
 
+Fork or Clone this repo to your computer, create a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) to isolate your setup, and then once your
+`env` is activated (for Windows run `<env-name>\Scripts\activate>`), run `pip install -r requirements.txt` from project root.
+
+Everything should be ready to go.
+
 #### Installing wkhtmltopdf
 
-```bash
-pip install slack-to-pdf
-```
+**WINDOWS:** If you are on *Windows* then wkhtmltopdf has already been installing in this project's folder and is ready to go.
+**OSX:** Download and install the package [here](http://wkhtmltopdf.org/) and everything should work.
+**UNIX:** Please follow the instruction [here](https://github.com/pdfkit/pdfkit/wiki/Installing-WKHTMLTOPDF)
 
-`slack-to-pdf` will be installed as an entry-point; run from anywhere.
-
-```bash
-$ slack-to-pdf --help
-Usage: slack-to-pdf [OPTIONS]
-
-Options:
-  -p, --port INTEGER  Host port to serve your content on
-  -z, --archive PATH  Path to your Slack export archive (.zip file)
-                      [required]
-  -I, --ip TEXT       Host IP to serve your content on
-  --no-browser        If you do not want a browser to open automatically, set
-                      this.
-  --debug
-  --help              Show this message and exit.
-```
-
+Note: I will later work on making this process even easier for all OS Systems.
 
 ## Acknowledgements
 
