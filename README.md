@@ -5,7 +5,7 @@
 # Slack To PDF Report
 
 A Slack To PDF Report tool that allows you to easily view and share a report of your
-Slack team's interactions (instead of having to dive into hundreds of JSON files). **This code is not nice.. at all. I wouldn't recommend reading, but it does the job. **
+Slack team's interactions (instead of having to dive into hundreds of JSON files). **This code is not nice.. at all. I wouldn't recommend reading, but it does the job.**
 
 ![Preview](images/mockup_slack_to_pdf_1.png)
 
