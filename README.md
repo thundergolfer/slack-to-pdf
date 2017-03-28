@@ -1,6 +1,7 @@
 <p align="center">
   <img src="images/slack_to_pdf.png" />
 </p>
+
 # Slack To PDF Report
 
 A Slack To PDF Report tool that allows you to easily view and share a report of your
