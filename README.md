@@ -7,6 +7,12 @@
 A Slack To PDF Report tool that allows you to easily view and share a report of your
 Slack team's interactions (instead of having to dive into hundreds of JSON files). **This code is not nice.. at all. I wouldn't recommend reading, but it does the job.**
 
+-----
+
+> **Note:** Slack does [provide Metrics](https://get.slack.help/hc/en-us/articles/218407447-View-analytics-and-usage-) to even those on their free plan. But these metrics are only things like *Overall Channel Activity* or *Total Messages*, and don't cover what is provided here to fulfil my original purposes.
+
+-----
+
 ![Preview](images/mockup_slack_to_pdf_1.png)
 
 
